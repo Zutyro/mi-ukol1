@@ -30,9 +30,9 @@ def sphere(k):
             lowest_records.append([y,i+1])
             lowest_coords = coords
     lowest_records_swapped = np.swapaxes(lowest_records,0,1)
-    plt.title(f'Sphere in {k}D (maxFES = {k*10000})\nBest solution: {lowest_records[len(lowest_records)-1][0]}, in: \n{lowest_coords}')
+    plt.title(f'Sphere in {k}D (maxFES = {k*10000})\nBest solution: {lowest_records[len(lowest_records)-1][0]}, in: \n{[float(i) for i in lowest_coords]}')
     plt.plot(lowest_records_swapped[1],lowest_records_swapped[0],drawstyle="steps-post")
     plt.show()
 
 
-sphere(5)
+sphere(20)
