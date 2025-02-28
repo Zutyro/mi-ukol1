@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
+from scipy.optimize import rosen
+
 
 def sphere(k):
     x_list = []
@@ -37,7 +39,6 @@ def sphere(k):
         if i%5 == 0 and i!=0:
             lowest_coords_concated = lowest_coords_concated + '\n'
         lowest_coords_concated = lowest_coords_concated + str(coord) + ', '
-    print(lowest_coords_concated)
     plt.title(f'Sphere in {k}D (maxFES = {k*10000})\nBest solution: {lowest_records[len(lowest_records)-1][0]}'
               f', in: \n{lowest_coords_concated}')
     plt.plot(lowest_records_swapped[1],lowest_records_swapped[0],drawstyle="steps-post")
@@ -211,9 +212,18 @@ def rosenbrock(k):
     plt.plot(lowest_records_swapped[1], lowest_records_swapped[0], drawstyle="steps-post")
     plt.show()
 
-
-# trid(20)
-# sphere(5)
-# schwefel(20)
-# dixonprice(5)
-# rosenbrock(20)
+trid(5)
+trid(10)
+trid(20)
+sphere(5)
+sphere(10)
+sphere(20)
+schwefel(5)
+schwefel(10)
+schwefel(20)
+dixonprice(5)
+dixonprice(10)
+dixonprice(20)
+rosenbrock(5)
+rosenbrock(10)
+rosenbrock(20)
